@@ -2,15 +2,13 @@ const startBtn = document.getElementById("startBtn");
 const stopBtn = document.getElementById("stopBtn");
 const gradientLine = document.querySelector(".glow > span");
 
-// Step 1: Create a WebSocket connection
-const socket = new WebSocket("ws://localhost:5050"); // Or your backend WebSocket URL
+const socket = new WebSocket('wss://mock-backend-production-781e.up.railway.app');
 
-// Step 2: Log when connected
+
 socket.addEventListener("open", () => {
-  console.log("✅ WebSocket connection established");
+  console.log(" WebSocket connection established");
 });
 
-// Step 3: Receive messages from server
 socket.addEventListener("message", (event) => {
   const message = event.data;
 
@@ -23,7 +21,6 @@ socket.addEventListener("message", (event) => {
   }
 });
 
-// Step 4: Send messages to server
 startBtn.addEventListener("click", () => {
   socket.send("start-animation");
 });
