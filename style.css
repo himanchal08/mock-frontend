@@ -31,13 +31,12 @@ body {
   height: 350px;
   background-image: linear-gradient(
     90deg,
-    #41a4fb 0%,
-    #2085dd 20%,
-    #7b44fb 55%,
-    #f845b0 65%,
-    #ce3f13 90%,
-    #fe4007 100%
-
+    #1e75c9 0%,
+    #1257a6 20%,
+    #5e23c5 55%,
+    #c7207e 65%,
+    #9e1b00 90%,
+    #c82200 100%
   );
   background-size: 0% 0%;
   background-repeat: no-repeat;
