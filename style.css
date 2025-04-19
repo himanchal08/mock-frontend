@@ -43,7 +43,7 @@ body {
   background-position: top center;
   filter: blur(40px);
   position: absolute;
-  mix-blend-mode: overlay;
+  /* mix-blend-mode: overlay; */
   top: -50px;
   transition: all 1.2s ease-in-out;
 }
