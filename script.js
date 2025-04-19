@@ -6,6 +6,7 @@ const socket = new WebSocket('wss://mock-backend-production-c36c.up.railway.app'
 
 
 
+
 socket.addEventListener("open", () => {
   console.log(" WebSocket connection established");
 });
