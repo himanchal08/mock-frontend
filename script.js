@@ -2,7 +2,7 @@ const startBtn = document.getElementById("startBtn");
 const stopBtn = document.getElementById("stopBtn");
 const gradientLine = document.querySelector(".glow > span");
 
-const socket = new WebSocket('wss://mock-backend-production-781e.up.railway.app');
+const socket = new WebSocket('mock-backend-production-c36c.up.railway.app');
 
 
 socket.addEventListener("open", () => {
