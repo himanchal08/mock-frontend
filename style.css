@@ -48,9 +48,40 @@ body {
   transition: all 1.2s ease-in-out;
 }
 
+.glow > span {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 350px;
+  background-image: linear-gradient(
+    90deg,
+    #1e75c9 0%,
+    #1257a6 20%,
+    #5e23c5 55%,
+    #c7207e 65%,
+    #9e1b00 90%,
+    #c82200 100%
+  );
+  background-size: 0% 0%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  filter: blur(60px);
+  position: absolute;
+  top: -50px;
+  transition: all 1.2s ease-in-out;
+  opacity: 0;
+  transform: translateY(0);
+}
+
 .glow > span.active {
   background-size: 100% 20%;
   animation: movegradient 4s linear infinite, pulse 2s ease-in-out infinite;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.glow > span.exiting {
+  animation: exitUp 1s ease forwards;
 }
 
 @keyframes movegradient {
@@ -63,8 +94,7 @@ body {
 }
 
 @keyframes pulse {
-  0%,
-  100% {
+  0%, 100% {
     filter: blur(35px);
     opacity: 0.6;
   }
@@ -73,6 +103,15 @@ body {
     opacity: 1;
   }
 }
+
+@keyframes exitUp {
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+    background-size: 100% 0%;
+  }
+}
+
 
 .button-container {
   display: flex;
