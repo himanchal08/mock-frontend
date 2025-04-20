@@ -31,47 +31,63 @@ body {
   height: 350px;
   background-image: linear-gradient(
     90deg,
-    #89aaf8 20%, #b770fc 40%, #d24dc3 60%, #e85560 80%, #ee7b6b 100%
+    #1e75c9 0%,
+    #1257a6 20%,
+    #5e23c5 55%,
+    #c7207e 65%,
+    #9e1b00 90%,
+    #c82200 100%
   );
   background-size: 0% 0%;
   background-repeat: no-repeat;
-  background-position: top center;
-  filter: blur(35px);
+  background-position: bottom center;
+  filter: blur(60px);
   position: absolute;
   top: -50px;
   opacity: 0;
-  transform: translateY(0);
-  transition: all 1.2s ease-in-out;
 }
 
+/* 🌟 When "start-animation" is received */
 .glow > span.active {
-  background-size: 100% 20%;
-  animation: movegradient 4s linear infinite;
-  opacity: 1;
-  transform: translateY(0);
+  animation: expandGlow 1s ease forwards, movegradient 4s linear infinite;
 }
 
-.glow > span.exiting {
-  animation: shrinkUp 2s ease forwards;
+/* 💨 When "stop-animation" is received, .active is removed */
+.glow > span:not(.active) {
+  animation: collapseGlow 1s ease forwards;
 }
 
+/* 🎬 Keyframes for expanding */
+@keyframes expandGlow {
+  from {
+    background-size: 0% 0%;
+    opacity: 0;
+  }
+  to {
+    background-size: 100% 20%;
+    opacity: 1;
+  }
+}
+
+/* 🎬 Keyframes for collapsing upward */
+@keyframes collapseGlow {
+  from {
+    background-size: 100% 20%;
+    opacity: 1;
+  }
+  to {
+    background-size: 100% 0%;
+    opacity: 0;
+  }
+}
+
+/* 🌈 Optional: animated gradient movement */
 @keyframes movegradient {
   0% {
     background-position: 50% 0%;
   }
   100% {
     background-position: 100% 0%;
-  }
-}
-
-@keyframes shrinkUp {
-  0% {
-    background-size: 100% 20%;
-    opacity: 1;
-  }
-  100% {
-    background-size: 100% 0%;
-    opacity: 0;
   }
 }
 
