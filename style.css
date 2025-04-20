@@ -75,13 +75,13 @@ body {
 
 .glow > span.active {
   background-size: 100% 20%;
-  animation: movegradient 4s linear infinite, pulse 2s ease-in-out infinite;
+  animation: movegradient 4s linear infinite;
   opacity: 1;
   transform: translateY(0);
 }
 
 .glow > span.exiting {
-  animation: exitUp 1s ease forwards;
+  animation: exitUp 1s ease-in-out forwards;
 }
 
 @keyframes movegradient {
