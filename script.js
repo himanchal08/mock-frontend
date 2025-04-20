@@ -30,7 +30,3 @@ startBtn.addEventListener("click", () => {
 stopBtn.addEventListener("click", () => {
   socket.send("stop-animation");
 });
-
-window.addEventListener("DOMContentLoaded", () => {
-  document.body.classList.add("ready");
-});
