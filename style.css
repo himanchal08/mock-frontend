@@ -82,7 +82,7 @@ body {
 }
 
 .glow > span.exiting {
-  animation: exitUp 2s ease-in-out forwards;
+  animation: shrinkUp 2s ease-in-out forwards;
 }
 
 @keyframes movegradient {
@@ -105,11 +105,14 @@ body {
   }
 } */
 
-@keyframes exitUp {
-  to {
-    opacity: 0;
-    transform: translateY(-100px);
+@keyframes shrinkUp {
+  0% {
+    background-size: 100% 20%;
+    opacity: 1;
+  }
+  100% {
     background-size: 100% 0%;
+    opacity: 0;
   }
 }
 
