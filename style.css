@@ -41,18 +41,17 @@ body {
   top: -50px;
   opacity: 0;
   transform: translateY(0);
-  transition: all 1.2s ease-in-out;
+  animation: none !important;
+  /* transition: all 1.2s ease-in-out; */
 }
 .glow > span.active {
   animation: expandGlow 1.5s ease forwards, movegradient 4s linear infinite;
 }
 
-/* When .active is removed */
 .glow > span:not(.active) {
   animation: collapseGlow 2s ease forwards;
 }
 
-/* Animate glow entering */
 @keyframes expandGlow {
   from {
     background-size: 0% 0%;
