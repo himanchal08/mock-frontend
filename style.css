@@ -41,8 +41,8 @@ body {
   top: -50px;
   opacity: 0;
   transform: translateY(0);
-  /* animation: none !important; */
-  /* transition: all 1.2s ease-in-out; */
+  animation: none !important;
+  transition: all 1.2s ease-in-out;
 }
 .glow > span.active {
   animation: expandGlow 1.5s ease forwards, movegradient 4s linear infinite;
