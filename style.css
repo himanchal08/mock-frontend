@@ -43,8 +43,51 @@ body {
   transform: translateY(0);
   transition: all 1.2s ease-in-out;
 }
-
 .glow > span.active {
+  animation: expandGlow 1s ease forwards, movegradient 4s linear infinite;
+}
+
+/* When .active is removed */
+.glow > span:not(.active) {
+  animation: collapseGlow 1s ease forwards;
+}
+
+/* Animate glow entering */
+@keyframes expandGlow {
+  from {
+    background-size: 0% 0%;
+    opacity: 0;
+  }
+  to {
+    background-size: 100% 20%;
+    opacity: 1;
+  }
+}
+
+/* Animate glow shrinking upward */
+@keyframes collapseGlow {
+  from {
+    background-size: 100% 20%;
+    opacity: 1;
+  }
+  to {
+    background-size: 100% 0%;
+    opacity: 0;
+  }
+}
+
+/* Optional: Animate gradient moving */
+@keyframes movegradient {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+
+/* .glow > span.active {
   background-size: 100% 20%;
   animation: movegradient 4s linear infinite;
   opacity: 1;
@@ -73,7 +116,7 @@ body {
     background-size: 0% 0%;
     opacity: 0;
   }
-}
+} */
 
 .button-container {
   display: flex;
