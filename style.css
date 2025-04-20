@@ -82,7 +82,7 @@ body {
 }
 
 .glow > span.exiting {
-  animation: shrinkUp 2s ease-in-out forwards;
+  animation: shrinkUp 2s ease forwards;
 }
 
 @keyframes movegradient {
